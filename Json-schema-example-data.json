@@ -2,20 +2,23 @@
   "Users": [
 
     {
-      "id": "01",
+      "id": 1,
       "name": "Green",
-      "role": "admin"
+      "role": "admin",
+      "cost": 1000
     },
 
     {
-      "id": "011",
+      "id": 11,
       "name": "Learner",
-      "role": "editor"
+      "role": "editor",
+      "cost": 1000
     },
     {
-      "id" :"444",
+      "id" : 444,
       "name" : "upama",
-      "role" : "abc"
+      "role" : "abc",
+      "cost": 1000
     }
 
   ]

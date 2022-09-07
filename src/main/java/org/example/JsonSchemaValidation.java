@@ -1,7 +1,8 @@
-package com.greenlearner.json;
+package org.example;
 
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.loader.SchemaLoader;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -24,14 +25,20 @@ public class JsonSchemaValidation {
         JSONObject jsonObject = new JSONObject(jsonDataFile);
 
         //validate schema
+        JSONArray users = (JSONArray) jsonObject.get("Users");
         Schema schemaValidator = SchemaLoader.load(jsonSchema);
-        schemaValidator.validate(jsonObject);
+        for(Object o: users) {
+            if(o instanceof JSONObject) {
+                JSONObject jsonUser = (JSONObject )o;
+                schemaValidator.validate(jsonUser);
 
-        //use json data
-        System.out.println(jsonObject.getInt("id"));
-        System.out.println(jsonObject.getString("name"));
-        System.out.println(jsonObject.getDouble("cost"));
+                //use json data
 
+                System.out.println("-------------------------------------");
+                System.out.println(jsonUser);
+                System.out.println("-------------------------------------");
+            }
+        }
 
     }
 }
