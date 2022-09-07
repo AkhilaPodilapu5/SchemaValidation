@@ -20,7 +20,7 @@ public class JsonSchemaValidation {
         JSONObject jsonSchema = new JSONObject(schemaData);
 
         //json data
-        File jsonData = new File("data.json");
+        File jsonData = new File("Json-schema-example-data.json");
         JSONTokener jsonDataFile = new JSONTokener(new FileInputStream(jsonData));
         JSONObject jsonObject = new JSONObject(jsonDataFile);
 
